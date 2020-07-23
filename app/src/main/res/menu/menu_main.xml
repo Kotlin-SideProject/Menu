@@ -4,14 +4,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/actiob_camera"
-        android:icon="@android:drawable/ic_menu_camera"
-        android:title="Item"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/action_expense"
+        android:title="消費紀錄"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_contacts"
         android:title="聯絡人"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_camera"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Item"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_help"
