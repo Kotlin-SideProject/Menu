@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     companion object{
         var REQUSET_CONTACTS = 100
     }
+
+    private val REQUEST_EXPENSE: Int = 200
     private val REQUEST_CAMERA: Int = 100
     val contacts = mutableListOf<Contact>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -126,6 +128,10 @@ class MainActivity : AppCompatActivity() {
             R.id.action_camera -> {
                 val camera = Intent(MainActivity@this, CameraActivity::class.java)
                 startActivityForResult(camera, REQUEST_CAMERA)
+            }
+
+            R.id.action_expense -> {
+                startActivityForResult(Intent(MainActivity@this, ExpenseActivity::class.java), REQUEST_EXPENSE)
             }
         }
         return super.onOptionsItemSelected(item)
