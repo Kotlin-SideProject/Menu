@@ -21,4 +21,7 @@
         android:id="@+id/action_help"
         android:title="說明"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_trans"
+        android:title="交易紀錄" />
 </menu>

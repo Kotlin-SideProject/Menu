@@ -11,10 +11,12 @@ import com.angus.menu.room.ExpenseDatabase
 import kotlinx.android.synthetic.main.activity_expense.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import java.util.concurrent.Executors
 
 class ExpenseActivity : AppCompatActivity() {
+    private lateinit var expenses: List<Expense>
     private lateinit var adapter: ExpenseAdapter
     private lateinit var database: ExpenseDatabase
     companion object{
@@ -37,7 +39,7 @@ class ExpenseActivity : AppCompatActivity() {
             "expense.db")
             .build()
         CoroutineScope(Dispatchers.IO).launch {
-            var expenses = database.expenseDao().getAll()
+             expenses = database.expenseDao().getAll()
             Log.d(TAG, "expenses: ${expenses.size}")
 
             runOnUiThread {
@@ -55,6 +57,15 @@ class ExpenseActivity : AppCompatActivity() {
                 for(expense in expenseData){
                     database.expenseDao().add(expense)
                 }
+                expenses = database.expenseDao().getAll()
+
+                runOnUiThread {
+                    recycler.setHasFixedSize(true)
+                    recycler.layoutManager = LinearLayoutManager(this@ExpenseActivity)
+                    adapter = ExpenseAdapter()
+                    adapter.setExpenses(expenses)
+                    recycler.adapter = adapter
+                        }
             }
         }
     }

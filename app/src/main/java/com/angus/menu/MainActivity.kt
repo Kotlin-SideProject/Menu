@@ -21,10 +21,10 @@ import kotlinx.android.synthetic.main.contact_row.view.*
 class MainActivity : AppCompatActivity() {
     companion object{
         var REQUSET_CONTACTS = 100
+        private val REQUEST_TRANS: Int = 300
+        private val REQUEST_EXPENSE: Int = 200
+        private val REQUEST_CAMERA: Int = 400
     }
-
-    private val REQUEST_EXPENSE: Int = 200
-    private val REQUEST_CAMERA: Int = 100
     val contacts = mutableListOf<Contact>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -132,6 +132,10 @@ class MainActivity : AppCompatActivity() {
 
             R.id.action_expense -> {
                 startActivityForResult(Intent(MainActivity@this, ExpenseActivity::class.java), REQUEST_EXPENSE)
+            }
+
+            R.id.action_trans -> {
+                startActivityForResult(Intent(this@MainActivity, TransActivity::class.java), REQUEST_TRANS)
             }
         }
         return super.onOptionsItemSelected(item)
