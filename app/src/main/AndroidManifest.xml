@@ -16,20 +16,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TransActivity"></activity>
-        <activity android:name=".ExpenseActivity" />
-        <activity android:name=".CameraActivity" />
-        <activity
-            android:name=".MaterialActivity"
-            android:label="@string/title_activity_material"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SwapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".TransActivity" />
+        <activity android:name=".ExpenseActivity" />
+        <activity android:name=".CameraActivity" />
+        <activity
+            android:name=".MaterialActivity"
+            android:label="@string/title_activity_material"
+            android:theme="@style/AppTheme.NoActionBar" />
+<!--        <activity android:name=".MainActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
     </application>
 
 </manifest>

@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         private val REQUEST_TRANS: Int = 300
         private val REQUEST_EXPENSE: Int = 200
         private val REQUEST_CAMERA: Int = 400
+        private val REQUEST_CONTACTLIST: Int = 500
+
     }
     val contacts = mutableListOf<Contact>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -136,6 +138,9 @@ class MainActivity : AppCompatActivity() {
 
             R.id.action_trans -> {
                 startActivityForResult(Intent(this@MainActivity, TransActivity::class.java), REQUEST_TRANS)
+            }
+            R.id.action_contact_list -> {
+                startActivityForResult(Intent(this@MainActivity, FragmentActivity::class.java), REQUEST_CONTACTLIST)
             }
         }
         return super.onOptionsItemSelected(item)
